@@ -1,31 +1,27 @@
 # 學生系統
 
-class student:
+class Student:
 	def __init__(self,name,age,grades=None):
 		self.name = name
 		self.age = age
-		if grades:
-			self.grades = grades
-		else:
-			self.grades = None
+		self.grades = grades if grades else {}
 
-
-	def average_grade(self):
-		total = sum(self.grades.values())
-		s = len(self.grades)
-		if s == 0:
+	def average_grade(self):		
+		if not self.grades:	# 如果分母(資料數量s)為0則return 0
 			return 0
-		return total/s
+		return sum(self.grades.values())/len(self.grades)
 		
-# class classroom:
-# 	def __init__(self,class_name,student_list(student)=None):
-# 		def add_student()
-			
-
-# 		return
+class Classroom:
+	def __init__(self,class_name,student_list=None):
+		self.class_name = class_name
+		self.student_list = student_list if student_list else []
 		
+	def add_student(self,student):
+		self.student_list.append(student)
+	# 因為這個方法只是將student加入classroom這個物件的student_list屬性裡所以不需要return
 			
-# 		def class_average()
-			
-
-# 		return
+	def class_average(self):
+		if not self.student_list:
+			return 0
+		# 判斷student_list是否為空 空的就代表沒意義所以return 0
+		return sum(student.average_grade() for student in self.student_list)/ len(self.student_list)  # 計算全班的平均成績
