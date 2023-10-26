@@ -14,9 +14,9 @@ class Student:
 		return self.__grades
 
 	def average_grade(self):		
-		if not self.grades:	# 如果分母(資料數量s)為0則return 0
+		if not self.__grades:	# 如果分母(資料數量s)為0則return 0
 			return 0
-		return sum(self.grades.values())/len(self.grades)
+		return sum(self.__grades.values())/len(self.__grades)
 	
 	def introduce(self):
 		return f"Hi, I'm {self.__name} and I'm {self.__age} years old."
