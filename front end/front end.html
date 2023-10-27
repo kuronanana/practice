@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+
+<input type="text" id="username" placeholder="Enter your name">
+<input type="number" id="age" placeholder="Enter your age">
+<select id="gender">
+	<option value="male">male</option>
+	<option value="female">female</option>
+	<option value="other">other</option>
+</select>
+
+<label>Choose your hobbies:</label>
+<input type="checkbox" id="hobby1" value="Read">Read
+<input type="checkbox" id="hobby2" value="Traveling">Traveling
+<input type="checkbox" id="hobby3" value="Cooking">Cooking
+
+<button onclick="register()">Submit</button>
+
+<p id="message"></p>
+
+<script src="./script.js"></script>
+</body>
+</html>
