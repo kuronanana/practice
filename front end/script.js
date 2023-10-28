@@ -47,3 +47,11 @@ document.getElementById("toggleButton").addEventListener('click',function(){
 	document.getElementById("content").classList.toggle('highlight');
 
 })
+
+const number = [1,2,3,4]
+setTimeout(function(){
+	const doubled = number.map(function(item){
+		return item * 2;
+	});
+	console.log(doubled);
+},2000);
