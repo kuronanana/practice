@@ -38,3 +38,12 @@ function register() {
 	document.getElementById("message").innerHTML = `Thanks for registering, ${username}! You are user number ${users.length}.Your hobbies are ${hobbies.join(", ")}.`;
     }
     
+document.getElementById("myButton").addEventListener('click',function(){
+	document.getElementById("myDiv").innerHTML = "hello!";
+
+})
+
+document.getElementById("toggleButton").addEventListener('click',function(){
+	document.getElementById("content").classList.toggle('highlight');
+
+})
