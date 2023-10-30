@@ -56,3 +56,36 @@ setTimeout(function(){
 	console.log(doubled);
 },2000);
 
+// 箭頭函數
+const arrowFunction = () => { 
+	console.log(this);
+    };
+    arrowFunction();  // 結果是 Window（箭頭函數在全域範疇被創建）
+
+
+    const obj2 = {
+	method: arrowFunction
+    };
+    obj2.method();  // 結果仍然是 Window，不是 obj2（因為箭頭函數“繼承”了創建它的範疇的 this）
+
+// 常規函數
+function regularFunction() { 	
+	console.log(this);
+    }
+    regularFunction();  // 結果是 Window（因為是直接調用）
+    
+    const obj = {
+	method: regularFunction
+    };
+    obj.method();  // 結果是 obj（因為此函數作為 obj 的方法被調用）
+    
+// 物件方法中
+
+const person = {
+	name: 'Alice',
+	greet: function() {
+	    console.log('Hello, ' + this.name);
+	}
+    };
+    person.greet();  // 結果是 "Hello, Alice"（因為此函數作為 person 的方法被調用，所以 this 是 person）
+    
